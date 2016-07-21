@@ -16,6 +16,9 @@
 		1B85931C1D3D2E420051D343 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85931A1D3D2E420051D343 /* Message+CoreDataProperties.swift */; };
 		1B85931D1D3D2E420051D343 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85931B1D3D2E420051D343 /* Message.swift */; };
 		1B85931F1D3D2EAD0051D343 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85931E1D3D2EAD0051D343 /* TableViewController.swift */; };
+		1B8EC3431D414A350022EB7A /* Recipient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EC3411D414A350022EB7A /* Recipient+CoreDataProperties.swift */; };
+		1B8EC3441D414A350022EB7A /* Recipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EC3421D414A350022EB7A /* Recipient.swift */; };
+		1B8EC3481D41545D0022EB7A /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EC3471D41545D0022EB7A /* MessagesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		1B85931A1D3D2E420051D343 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B85931B1D3D2E420051D343 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1B85931E1D3D2EAD0051D343 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		1B8EC3411D414A350022EB7A /* Recipient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B8EC3421D414A350022EB7A /* Recipient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipient.swift; sourceTree = "<group>"; };
+		1B8EC3471D41545D0022EB7A /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +68,14 @@
 		1B8593021D3D2D660051D343 /* SlapChat */ = {
 			isa = PBXGroup;
 			children = (
+				1B8EC3411D414A350022EB7A /* Recipient+CoreDataProperties.swift */,
+				1B8EC3421D414A350022EB7A /* Recipient.swift */,
 				1B8593031D3D2D660051D343 /* AppDelegate.swift */,
 				1B8593181D3D2DC70051D343 /* DataStore.swift */,
 				1B85931A1D3D2E420051D343 /* Message+CoreDataProperties.swift */,
 				1B85931B1D3D2E420051D343 /* Message.swift */,
 				1B85931E1D3D2EAD0051D343 /* TableViewController.swift */,
+				1B8EC3471D41545D0022EB7A /* MessagesTableViewController.swift */,
 				1B8593071D3D2D660051D343 /* Main.storyboard */,
 				1B85930D1D3D2D660051D343 /* Assets.xcassets */,
 				1B85930F1D3D2D660051D343 /* LaunchScreen.storyboard */,
@@ -151,6 +160,9 @@
 				1B85931F1D3D2EAD0051D343 /* TableViewController.swift in Sources */,
 				1B8593191D3D2DC70051D343 /* DataStore.swift in Sources */,
 				1B85931D1D3D2E420051D343 /* Message.swift in Sources */,
+				1B8EC3481D41545D0022EB7A /* MessagesTableViewController.swift in Sources */,
+				1B8EC3431D414A350022EB7A /* Recipient+CoreDataProperties.swift in Sources */,
+				1B8EC3441D414A350022EB7A /* Recipient.swift in Sources */,
 				1B85931C1D3D2E420051D343 /* Message+CoreDataProperties.swift in Sources */,
 				1B8593041D3D2D660051D343 /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +314,7 @@
 				1B8593171D3D2D660051D343 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

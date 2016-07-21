@@ -7,35 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
 
-    
-    var managedMessageObjects: [Message] = []
-    let store: DataStore = DataStore()
+    let store = DataStore.sharedDataStore
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        store.fetchData()
+        store.fetchRecipientData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         super.viewWillAppear(true)
         
-        store.fetchData()
+        store.fetchRecipientData()
         tableView.reloadData()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,23 +39,32 @@ class TableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return store.messages.count
+        return store.recipients.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("recipientCell", forIndexPath: indexPath)
         
-        let eachMessage = store.messages[indexPath.row]
-        
-        cell.textLabel?.text = eachMessage.content
+        let eachRecipient = store.recipients[indexPath.row]
+        cell.textLabel?.text = eachRecipient.name
         
         return cell
     }
+    
+    // You can use this to pass the selected recipient to the next view controller, which will display associated messages...
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    // Or you can use a segue to pass the selected recipient...
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationVC = segue.destinationViewController as? MessagesTableViewController {
+                let selectedRow = tableView.indexPathForSelectedRow
+                let selectedRecipient = store.recipients[selectedRow!.row]
+                destinationVC.recipient = selectedRecipient
+        }
+    }
+    
 }
